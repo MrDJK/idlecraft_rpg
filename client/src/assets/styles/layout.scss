@@ -1,0 +1,202 @@
+body, html, #layout {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #191919;
+    color: white;
+    overflow: hidden;
+}
+
+.fullscreen-mobile {
+    background: black;
+    display: grid;
+    position: fixed;
+    width: calc(100% - 60px);
+    top: 70px;
+    right: 0;
+    height: calc(100vh - 140px);
+    z-index: 100;
+    padding: 10px;
+}
+
+#layout {
+    display: grid;
+    background: url('https://res.cloudinary.com/dpktc8kvn/image/upload/v1630450976/backgrounds/background_3.png') no-repeat center center #000;
+    background-size: cover;
+    animation: fade-in 1s forwards 1;
+    grid-template-areas:
+                        "header header"
+                        "menu content"
+                        "bottom-bar bottom-bar";
+    grid-template-rows: 70px auto 50px;
+    grid-template-columns: 70px auto;
+
+    #grid-chatbar {
+        display: none;
+        grid-area: chatbar;
+        grid-template-rows: 30px auto 115px;
+        overflow: hidden;
+    }
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 60px auto 300px;
+        grid-template-areas: "header header header"
+                        "menu content chatbar"
+                        "bottom-bar bottom-bar bottom-bar";
+        #grid-chatbar {
+            display: grid;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        &.chat-open {
+            #grid-chatbar {
+                background: black;
+                display: grid;
+                position: fixed;
+                width: calc(100% - 60px);
+                top: 70px;
+                right: 0;
+                height: calc(100% - 120px);
+                z-index: 100;
+                padding: 10px;
+            }
+        }
+    }
+
+    #grid-header {
+        grid-area: header;
+        overflow-x: auto;
+
+        .v-popper {
+            height: 100%;
+
+            > div {
+                height: 100%;
+
+                .skill-container {
+                    height: 100%;
+                    justify-items: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    #bottom-bar {
+        grid-area: bottom-bar;
+        display: inherit;
+        flex-direction: row;
+        z-index: 200;
+
+        > div {
+            display: flex;
+        }
+    }
+
+    #grid-content {
+        grid-area: content;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    #grid-header,
+    #grid-left-nav,
+    #grid-chatbar,
+    #bottom-bar{
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px) saturate(180%) !important;
+        color: #ccc;
+    }
+
+
+    #grid-left-nav {
+        grid-area: menu;
+        overflow-y: auto;
+
+        ul {
+            //overflow-y: scroll;
+        }
+    }
+
+    .ui-window {
+        background: black;
+        display: grid;
+        position: fixed;
+        width: calc(100% - 70px);
+        top: 70px;
+        right: 0;
+        height: calc(100% - 120px);
+        z-index: 100;
+        left: unset;
+
+        > ul {
+            overflow: auto;
+        }
+
+        > .header {
+            cursor: pointer;
+        }
+
+        @include media-breakpoint-up(md) {
+            left: unset;
+            right: 335px;
+            bottom: 50px;
+            width: 525px;
+            max-height: 40%;
+            height: 500px;
+            top: unset;
+        }
+    }
+}
+
+#grid-left-nav,
+#grid-header {
+    a.skill-link {
+        position: relative;
+        transition: all ease-in-out 0.5s;
+        display: flex;
+        justify-content: center;
+
+        &:hover:after {
+            opacity: 0.5 !important;
+        }
+
+        &::after {
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            content: ' ';
+            background: linear-gradient(to right, rgba(#0c4598, 1), rgba($primary, 1));
+            transition: all ease-in-out 0.4s;
+        }
+
+        &.router-link-exact-active:not(.active-skill):after,{
+            opacity: 0.3;
+            background: linear-gradient(to right, rgba(#0c4598, 1), rgba($primary, 1));
+        }
+
+        &.active-skill:not(.router-link-exact-active) {
+            &::after {
+                background: linear-gradient(to left, rgba(#0c980e, 1), rgba(#0dfd19, 1));
+                opacity: 0.3;
+            }
+        }
+
+        // When on both active skill and current page
+        &.active-skill.router-link-exact-active {
+            &::after {
+                background: linear-gradient(230deg, rgba(#0c980e, 1), rgba(#0c4598, 1));
+                opacity: 0.7;
+            }
+            &:hover {
+                &::after {
+                    background: linear-gradient(230deg, rgba(#0c980e, 1), rgba(#0c4598, 1));
+                }
+            }
+        }
+    }
+}

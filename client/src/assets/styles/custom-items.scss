@@ -1,0 +1,21 @@
+div.mc-icon.custom-icon {
+    background-repeat: no-repeat;
+    display: block;
+    background-size:calc(32px / var(--n)) calc(32px / var(--n));
+}
+
+.icon-currency {
+    background-image: url("@/assets/images/sprites/currency.png");
+}
+
+.icon-diamond-ingot {
+    background-image: url("@/assets/images/sprites/diamond-ingot.png");
+}
+
+.icon-spiky-bow {
+    background-image: url("@/assets/images/sprites/spiky-bow.png");
+}
+
+.icon-void-hammer {
+    background-image: url("@/assets/images/sprites/void-hammer.png");
+}

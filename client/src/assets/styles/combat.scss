@@ -1,0 +1,68 @@
+.combat-page {
+    display: grid;
+    grid-template-rows: auto 100px;
+
+    .monster-image {
+        width: 100px;
+    }
+}
+
+.combat-grid {
+    justify-content: center;
+
+    .run-away {
+        margin-left: 50px;
+        margin-top: 50px;
+        top: 0;
+    }
+
+    .player-render {
+        min-height: 350px;
+    }
+
+    .player-render-container {
+        //height: 600px;
+        //width: 300px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .group-monsters {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: 100%;
+        max-width: 50%;
+    }
+
+    .player-mob-container {
+        > div {
+            width: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.model-render {
+    max-width: 250px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 250px;
+    min-height: 350px;
+}
+
+.combat-inventory {
+    ul {
+        background: rgba(0,0,0,0.5);
+    }
+    li {
+        //min-height: 48px;
+        min-width: 64px;
+    }
+}

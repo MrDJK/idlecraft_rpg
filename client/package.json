@@ -1,0 +1,54 @@
+{
+  "name": "idlecraft-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@cloudinary/base": "^1.0.0-beta.4",
+    "assert": "^2.0.0",
+    "bootstrap": "^5.0.2",
+    "browserify-zlib": "^0.2.0",
+    "click-outside-vue3": "^4.0.1",
+    "core-js": "^3.16.0",
+    "lodash": "^4.17.21",
+    "prismarine-nbt": "^1.6.0",
+    "socket.io-client": "^4.1.3",
+    "stream-browserify": "^3.0.0",
+    "v-tooltip": "^4.0.0-alpha.1",
+    "vue": "^3.1.5",
+    "vue-confetti": "^2.2.2",
+    "vue-lodash": "^2.1.2",
+    "vue-mention": "^1.0.0",
+    "vue-router": "^4.0.10",
+    "vue-socket.io": "git+https://github.com/1e4/Vue-Socket.io.git",
+    "vue3-autocounter": "^1.0.6",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0-beta.2",
+    "@vue/cli-plugin-eslint": "~5.0.0-beta.2",
+    "@vue/cli-plugin-router": "~5.0.0-beta.2",
+    "@vue/cli-plugin-vuex": "~5.0.0-beta.2",
+    "@vue/cli-service": "~5.0.0-beta.2",
+    "@vue/compiler-sfc": "^3.0.4",
+    "eslint": "^7.20.0",
+    "eslint-plugin-vue": "^7.2.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^11.0.1"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

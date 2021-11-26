@@ -1,0 +1,25 @@
+$link-decoration: none;
+$enable-smooth-scroll: false;
+$font-family-sans-serif: 'Atkinson Hyperlegible', sans-serif;
+$card-bg: rgba(0,0,0,0.8);
+$card-color: #ccc;
+$input-bg: rgba(0,0,0,0.4);
+$input-border-color: #464646;
+$input-color: #ccc;
+$font-size-base: 1rem;
+$primary: #0dcbea;
+$input-border-radius: 0;
+$enable-rounded: false;
+$dark-green: rgb(37, 91, 138);
+$dark-blue: rgba(12, 115, 205, 1);
+$input-focus-box-shadow: 0 0 0 1px $dark-blue;
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+        xxxl: 1600px,
+) !default;

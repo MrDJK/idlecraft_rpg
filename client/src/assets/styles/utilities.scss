@@ -1,0 +1,44 @@
+.item-stats-table {
+    width: 250px;
+    max-width: 100%;
+}
+.bg-dark-opacity {
+    background: rgba(0, 0, 0, 0.3);
+    transition: all ease-in-out 0.3s;
+
+    &:not(.no-hover):hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.bg-darker-opacity {
+    background: rgba(0,0,0,0.5);
+    transition: all ease-in-out 0.3s;
+
+    &:not(.no-hover):hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
+
+
+.bg-black {
+    background: #000;
+}
+
+.border-left-blue {
+    border-left: 10px solid $dark-blue;
+}
+
+.waiting-for-fight-animation {
+    animation: fadeOut 1s linear forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0
+    }
+}

@@ -1,0 +1,53 @@
+#auth-page {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "form background";
+    height: 100%;
+    background: url('https://res.cloudinary.com/dpktc8kvn/image/upload/v1630450976/backgrounds/background_3.png') no-repeat center center #191919;
+    opacity: 0;
+    animation: fade-in 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    overflow: auto;
+
+    @include media-breakpoint-down(md) {
+        grid-template-columns: 40% 60%;
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: flex;
+        flex-direction: column;
+
+        #auth-main-content {
+
+        }
+    }
+
+    #auth-main-content {
+        grid-area: background;
+
+        > div {
+            background: rgba(25, 25, 25, 0.7);
+        }
+    }
+
+    #auth-sidebar {
+        grid-area: form;
+
+        @include media-breakpoint-up(lg) {
+
+            background: rgba(25, 25, 25, 0.95);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    #auth-main-content,
+    #auth-sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+}

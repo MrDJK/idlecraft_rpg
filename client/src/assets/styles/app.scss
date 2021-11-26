@@ -1,0 +1,90 @@
+@import "bootstrap/variables.scss";
+@import "bootstrap";
+@import "keyframes";
+@import '~v-tooltip/dist/v-tooltip.css';
+@import "minecraft-items-spritesheet";
+@import "custom-items";
+@import "layout.scss";
+@import "auth";
+@import "components";
+@import "utilities";
+@import "page";
+@import "forms";
+@import "toast";
+@import "equipment";
+@import "adventuring";
+@import "cooking";
+@import "combat";
+@import "chat";
+
+// Sidebar active skills
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.premium {
+    color: gold;
+}
+
+//.card-header
+
+.page-header {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 15px;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+
+@keyframes AnimateButton {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#inventory {
+    //transform: translateY(0);
+    //transition: all ease-in-out 0.4s;
+    //position: absolute;
+
+    .item {
+        margin: 3px;
+    }
+}
+
+.slideInOut-enter-from {
+    //transform: translateY(10px);
+}
+
+.slideInOut-enter, .slideInOut-leave-to {
+    transform: translateY(100vh);
+}
+
+#inventory.is-open {
+    animation: slideUp 0.3s;
+}
+
+#inventory.close {
+    animation: slideDown 0.3s forwards linear;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}

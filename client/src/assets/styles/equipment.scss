@@ -1,0 +1,99 @@
+#equipment-screen {
+
+}
+
+.item-unequipped {
+    opacity: 0.3;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5)) grayscale(1) !important;
+}
+
+.equipment-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#equipment-body {
+    max-width: 100%;
+    height: 500px;
+    width: auto;
+}
+
+#equipment-screen {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "header" "left" "preview" "right" "tools";
+    max-width: 100%;
+
+    grid-template-rows: 70px 70px auto 70px 70px;
+    grid-template-columns: 100%;
+
+    @include media-breakpoint-up(md) {
+        grid-template-areas:
+                            "header header header"
+                            "left preview right"
+                            "tools tools tools";
+        grid-template-rows: 50px auto 100px;
+        grid-template-columns: 20% auto 20%;
+
+        width: 700px;
+    }
+
+    #equipment-right-panel {
+        grid-area: right;
+    }
+
+    #equipment-left-panel {
+        grid-area: left;
+    }
+
+    #equipment-header {
+        grid-area: header;
+    }
+
+    #equipment-tools {
+        grid-area: tools;
+        justify-content: space-around;
+    }
+
+    #equipment-preview {
+        flex-grow: 1;
+        background: rgba(0, 0, 0, 0.4);
+        grid-area: preview;
+        display: block;
+        text-align: center;
+
+        img {
+            max-height: 100vw;
+        }
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+
+        > div {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 5px;
+            cursor: pointer;
+
+            @include media-breakpoint-up(md) {
+
+                padding: 15px;
+
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+.player-weapon {
+    &[data-weapon='void-hammer'] {
+        transform: translateX(-28px) translateY(0px);
+    }
+}
