@@ -10,6 +10,8 @@ IdleCraft was a game based upon Minecraft written in Vue & NodeJS. The idea was 
 ```
 cd server
 npm install
+sequelize-cli db:migrate
+sequelize-cli db:seed
 ```
 
 Open `.env` and update the variables in there
