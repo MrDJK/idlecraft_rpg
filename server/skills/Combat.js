@@ -172,9 +172,12 @@ class Combat {
     clearTimeout(p.timers.eat)
 
     const food = p.user.inventory.find(f => f.combat_inventory && f.Item.health_given);
+
+    if(!food)
+      return;
+
     const currentHealth = p.user.character.health;
     const maxHealth = p.user.character.max_health;
-    console.log(`Food in inventory`, maxHealth, currentHealth, food.Item.health_given)
 
     if(maxHealth - currentHealth >= food.Item.health_given)
     {
