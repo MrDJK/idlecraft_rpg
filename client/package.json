@@ -24,7 +24,7 @@
     "vue-lodash": "^2.1.2",
     "vue-mention": "^1.0.0",
     "vue-router": "^4.0.10",
-    "vue-socket.io": "git+https://github.com/1e4/Vue-Socket.io.git",
+    "vue-socket.io": "git+https://github.com:1e4/vue3-socketio3.git",
     "vue3-autocounter": "^1.0.6",
     "vuex": "^4.0.2"
   },

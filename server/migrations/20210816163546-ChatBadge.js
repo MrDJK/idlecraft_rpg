@@ -11,7 +11,7 @@ module.exports = {
 
     await queryInterface.addColumn("characters", "premium", {
       type: Sequelize.DataTypes.DATE,
-      defaultValue: false
+      defaultValue: null
     });
 
     await queryInterface.addColumn("characters", "badge", {
